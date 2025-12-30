@@ -52,15 +52,45 @@
 
 #from the list find the smallest number using the recursive function
 
-def find_smallest_recursive(numbers_list):
-    if len(numbers_list) == 1:
-        return numbers_list[0]
-    else:
-        sub_min = find_smallest_recursive(numbers_list[1:])
-        return numbers_list[0] if numbers_list[0] < sub_min else sub_min
+# def find_smallest_recursive(numbers_list):
+#     if len(numbers_list) == 1:
+#         return numbers_list[0]
+#     else:
+#         sub_min = find_smallest_recursive(numbers_list[1:])
+#         return numbers_list[0] if numbers_list[0] < sub_min else sub_min
     
 
 #palindrome number 
+
+#high order function
+
+
+def reverse_output(func):
+    def wrapper(*args, **kwargs):
+        
+        result = func(*args, **kwargs)
+
+        if (result, str):
+            return result[::-1]
+        return result
+    return wrapper
+
+@reverse_output
+def get_text(name):
+    return f"Bashyal {name}"
+
+print(get_text("Anuj"))
+
+def multiplier(factor):
+    def multiply_by_factor(number):
+        return number * factor
+    return multiply_by_factor
+
+multiplier_value = multiplier(5)
+print(multiplier_value._name_)
+
+
+
 
     
 
