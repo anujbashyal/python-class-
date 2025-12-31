@@ -65,29 +65,132 @@
 #high order function
 
 
-def reverse_output(func):
-    def wrapper(*args, **kwargs):
+# def reverse_output(func):
+#     def wrapper(*args, **kwargs):
         
-        result = func(*args, **kwargs)
+#         result = func(*args, **kwargs)
 
-        if (result, str):
-            return result[::-1]
-        return result
-    return wrapper
+#         if (result, str):
+#             return result[::-1]
+#         return result
+#     return wrapper
 
-@reverse_output
-def get_text(name):
-    return f"Bashyal {name}"
+# @reverse_output
+# def get_text(name):
+#     return f"Bashyal {name}"
 
-print(get_text("Anuj"))
+# print(get_text("Anuj"))
 
-def multiplier(factor):
-    def multiply_by_factor(number):
-        return number * factor
-    return multiply_by_factor
+# def multiplier(factor):
+#     def multiply_by_factor(number):
+#         return number * factor
+#     return multiply_by_factor
 
-multiplier_value = multiplier(5)
-print(multiplier_value._name_)
+# multiplier_value = multiplier(5)
+# print(multiplier_value._name_)
+
+
+# built in higher order function map, filter , reduce 
+
+# def square(num):
+#     return num ** 2
+
+# numbers=[1,2,3,4,5]
+
+# squared_numbers = map(square, numbers)
+
+# print(list(squared_numbers))
+
+
+# def divisible(num):
+#     if num % 2 == 0:
+#         return True
+#     else :
+#         return False
+# numbers=[1,2,3,4,5]
+
+# divisible_numbers = map (divisible, numbers)
+
+# print(list(divisible_numbers))
+
+
+# words = ['anuj', 'ronaldo', 'neymar']
+# result = list(map(str.upper, words))
+# print(result) 
+    
+
+
+#find the sum of each nested list and return true or fals if sum is greater than 10 using map function 
+
+# nested_list = [[1, 2], [15, 5], [2, 1], [7, 4]]
+
+# def is_sum_over_10(sublist):
+#     return sum(sublist) > 10
+
+# results = list(map(is_sum_over_10, nested_list))
+
+# print(results)
+
+
+# filter function 
+# def is_even(num):
+#     return num % 2 == 0
+
+# numbers = [1,2,3,4,5,6]
+
+# even_numbers = filter(is_even, numbers)
+# print(list(even_numbers))
+
+
+#filter out the words which have length greater than 3 
+
+
+# def word(str):
+#     return len(str)>3
+
+# words=["anuj","bashyal","cat"]
+
+# fil=filter(word,words)
+# print(list(fil))
+
+#filter out the dictionary item based on some condition like 'name' key length greater than 5
+     
+
+# data =[{"name": "Anuj", "age": 24, "city": "Kathmandu"}]
+
+# def name_length(item):
+#     return len(item['name'])>5
+
+# filtered_data = filter(name_length, data)
+# print(list(filtered_data))
+
+
+#reduce function
+# from functools import reduce 
+
+# def add(x,y):
+#     return x + y 
+
+# numbers = [1,2,3,4,5]
+# sum_of_numbers = reduce(add, numbers)
+# print(sum_of_numbers)
+
+
+#find the maximum number from the list using reduce function
+
+from functools import reduce
+
+def find_max_with_reduce(numbers):
+    maximum = reduce(max, numbers)
+    return maximum
+
+my_list = [15, 42, 7, 99, 23]
+print(find_max_with_reduce(my_list)) 
+
+
+
+
+
 
 
 
